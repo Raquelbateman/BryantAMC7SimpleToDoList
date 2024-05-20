@@ -12,3 +12,18 @@ background-color:pink;
   left:50%;
   transform: translate(-50%, -30%);
 }
+
+.addButton{
+  border: none;
+  border-radius: 5px;
+  background-color: hotpink;
+  color:antiquewhite;
+  font-size: 16px;
+  margin: 5px;
+  padding: 5px;
+
+}
+
+.addButton.hover{
+  opacity: 30%;
+}
