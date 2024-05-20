@@ -26,4 +26,5 @@ background-color:pink;
 
 .addButton.hover{
   opacity: 30%;
+  cursor:pointer;
 }
