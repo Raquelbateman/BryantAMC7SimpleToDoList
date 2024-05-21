@@ -1,13 +1,20 @@
-import React from "react";
+import { Key, useState } from "react";
+interface ToDoList {
+  id: Key | null | undefined;
+  todolist: string;
+}
+
 
 const ToDoList = () => {
   return (
     <>
-      <div className="myContainer">
-        <div className="row">
-          <h1>ToDo List</h1>
-          <input type="text"/>
-          <button className="addButton">Add</button>
+      <div className="mainContainer">
+        <div className="myContainer">
+          <div className="row">
+            <div className="meetingTitle">
+              Household Chores
+            </div>
+          </div>
         </div>
       </div>
     </>

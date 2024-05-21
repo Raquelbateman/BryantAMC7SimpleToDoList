@@ -1,30 +1,36 @@
-body{
-background-color:pink;
+@import url(https://fonts.googleapis.com/css?family=Tangerine:400,700);
 
-
+body {
+  background-color: pink;
+  background-image: url("./Media/Pictures/pexels-goumbik-349609.jpg");
+  background-size: 1489px;
+  background-position: center;
 }
 
+.mainContainer {
+  margin-left: 36%;
+  margin-top: 7%;
+  width: 400px;
+  height: 550px;
+  background-image:url("./Media/Pictures/binderBackground.png");
+  border-radius: 7%;
+ 
+}
 
-.myContainer{
-
+.myContainer {
   position: absolute;
-  top:30%;
-  left:50%;
+  top: 30%;
+  left: 50%;
   transform: translate(-50%, -30%);
 }
 
-.addButton{
-  border: none;
-  border-radius: 5px;
-  background-color: hotpink;
-  color:antiquewhite;
-  font-size: 16px;
-  margin: 5px;
-  padding: 5px;
-
-}
-
-.addButton:hover{
+/* .addButton:hover {
   opacity: 80%;
-  cursor:pointer;
+  cursor: pointer;
+} */
+
+.meetingTitle {
+  font-size: 29px;
+  margin-bottom: 410px;
+  transform: translate(-2%, 195%);
 }
