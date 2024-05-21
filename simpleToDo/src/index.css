@@ -31,12 +31,21 @@ body {
 
 .meetingTitle {
   font-size: 29px;
-  margin-bottom: 346px;
-  transform: translate(-2%, 54px);
+  margin-bottom: 300px;
+  transform: translate(-2%, 45px);
   font-family: "Shadows Into Light", cursive;
 }
 
 .inputField{
-  margin-top: 20px;
+  width:150px;
+  height: 25px;
+  border-radius:5px;
 
+}
+
+.addButton{
+  background-color: #40B010;
+  height:24px;
+  border-radius:5px;
+  margin-left: 13px;
 }

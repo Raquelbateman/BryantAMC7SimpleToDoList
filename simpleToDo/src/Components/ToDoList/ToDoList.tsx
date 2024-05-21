@@ -12,9 +12,13 @@ const ToDoList = () => {
         <div className="myContainer">
           <div className="row">
             <div className="meetingTitle">
+            
               Household Chores
+              <div className="row">
+              <input className="inputField"type="text"></input>
+              <button className="addButton">Add</button>
+              </div>
             </div>
-            <input className="inputField"type="text"></input>
           </div>
         </div>
       </div>
