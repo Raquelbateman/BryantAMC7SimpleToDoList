@@ -14,6 +14,7 @@ const ToDoList = () => {
             <div className="meetingTitle">
               Household Chores
             </div>
+            <input className="inputField"type="text"></input>
           </div>
         </div>
       </div>
