@@ -9,7 +9,7 @@ Create a simple to do list.
 Stylize your To-Do list. This means styling your application in a thoughtful and meaningful way that is not the way we did it in class.
 Find two bugs and fix them.
 
-<b>Requirements:<br>
+<b>Requirements:</b><br>
 Creating a To-Do List<br>
 Adding items to the list<br>
 Completing an item on the list (crossing out)<br>
