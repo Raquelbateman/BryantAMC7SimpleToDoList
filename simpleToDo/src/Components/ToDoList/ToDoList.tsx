@@ -39,7 +39,7 @@ const ToDoList = () => {
     setInput("");
   };
 
-  // create an edit/update function and connect it to the pencil icon which sits to the left of the X delete button
+  // create an edit/update function
   const editToDoList = (id: number, newText: string) => {
     const updatedList = list.map((item) =>
       item.id === id ? { ...item, todolist: newText } : item
