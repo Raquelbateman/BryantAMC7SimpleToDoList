@@ -1,7 +1,7 @@
 <b>Mini Challenge 7 Simple TodoList</b>
 
 <b>Name:</b> Alicia Bryant<br>
-<b>Project:</b> Button Styling with modules, Like Icon<br>
+<b>Project:</b> Simple Todo List<br>
 <b>Date:</b> 05/16/2024 <br>
 <strong>Description:</strong><br>
 
