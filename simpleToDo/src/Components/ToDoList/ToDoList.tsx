@@ -15,11 +15,18 @@ const ToDoList = () => {
 
   //create a function to help us add to our todo list
   const addToDoList = (newItem: string) => {
+    // Create a new todo item object
     const newTodo: ToDoList = {
+      // Generate a random id for the new todo item
       id: Math.random(),
+      // Set the todolist property to the newItem passed as an argument
       todolist: newItem
     };
+  
+    // Create a new array by spreading the existing list and adding the newTodo item
     setList([...list, newTodo]);
+  
+    // Clear the input field by setting the input state to an empty string
     setInput("");
   };
 
@@ -35,7 +42,19 @@ const ToDoList = () => {
   };
 
   const deleteTodo = (id: number) => {
-    const updatedList = list.filter((item) => item.id !== id);
+    // Filter the existing list to create a new list without the item to be deleted
+    const updatedList = list.filter((item) => {
+      // Check if the current item's id doesn't match the id passed to the function
+      if (item.id !== id) {
+        // If the ids don't match, include the item in the new list
+        return true;
+      } else {
+        // If the ids match, exclude the item from the new list
+        return false;
+      }
+    });
+  
+    // Update the list state with the new list
     setList(updatedList);
   };
 
