@@ -1,4 +1,6 @@
 import { useState } from "react";
+import styles from "./ToDoList.module.css"
+import { LiaTrashSolid } from "react-icons/lia";
 
 interface ToDoList {
   id: number | null;
@@ -95,37 +97,47 @@ const ToDoList = () => {
                 </button>
               </div>
               <ul>
-                {list.map((item) => (
-                  <li key={item.id}>
-                    {editingId === item.id ? (
-                      <input
-                        type="text"
-                        value={editInput}
-                        onChange={(e) => setEditInput(e.target.value)}
-                        onBlur={() => editToDoList(item.id!, editInput)}
-                      />
-                    ) : (
-                      <>
-                        <input
-                          type="checkbox"
-                          checked={item.isCompleted}
-                          onChange={() => toggleComplete(item.id!)}
-                        />
-                        <span style={{ textDecoration: item.isCompleted ? 'line-through' : 'none' }}>
-                          {item.todolist}
-                        </span>
-                        <button onClick={() => {
-                          setEditingId(item.id);
-                          setEditInput(item.todolist);
-                        }}>
-                          Edit
-                        </button>
-                        <button onClick={() => deleteTodo(item.id!)}>X</button>
-                      </>
-                    )}
-                  </li>
-                ))}
-              </ul>
+  {list.map((item) => (
+    <li key={item.id}>
+      {editingId === item.id ? (
+        // Render input field for editing when editingId matches the current item's id
+        <input
+          type="text"
+          value={editInput}
+          onChange={(e) => setEditInput(e.target.value)} // Update editInput state as user types
+          onBlur={() => editToDoList(item.id!, editInput)} // Call editToDoList function when user moves focus away from input
+        />
+      ) : (
+        <>
+      {/*adds checkbox */}
+          <input
+            type="checkbox"
+            checked={item.isCompleted}
+            onChange={() => toggleComplete(item.id!)}
+          />
+
+          {/* adds line through text */}
+          <span style={{ textDecoration: item.isCompleted ? 'line-through' : 'none' }}>
+            {item.todolist}
+          </span>
+
+          {/* edit button */}
+          <button
+            onClick={() => {
+              setEditingId(item.id);
+              setEditInput(item.todolist);
+            }}
+          >
+            Edit
+          </button>
+
+          {/* delete button*/}
+          <button onClick={() => deleteTodo(item.id!)}></button>
+        </>
+      )}
+    </li>
+  ))}
+</ul>
             </div>
           </div>
         </div>
