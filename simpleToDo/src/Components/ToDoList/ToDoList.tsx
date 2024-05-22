@@ -3,7 +3,7 @@ import { useState } from "react";
 interface ToDoList {
   id: number | null;
   todolist: string;
-  isCompleted: boolean; 
+  isCompleted: boolean;
 }
 
 const ToDoList = () => {
@@ -14,7 +14,8 @@ const ToDoList = () => {
   const [list, setList] = useState<ToDoList[]>([]);
 
   //useState to update our list
-  const [editId, setEditId] = useState<number | null>(null);
+  const [editingId, setEditingId] = useState<number | null>(null);
+  const [editInput, setEditInput] = useState('');
 
   //create a function to help us add to our todo list
   const addToDoList = (newItem: string) => {
@@ -35,15 +36,20 @@ const ToDoList = () => {
     setInput("");
   };
 
-  const editToDoList = (id: number, newValue: string) => {
-    const updatedList = list.map((item) => {
-      if (item.id === id) {
-        return { ...item, todolist: newValue };
-      }
-      return item;
-    });
+  // create an edit/update function and connect it to the pencil icon which sits to the left of the X delete button
+  const editToDoList = (id: number, newText: string) => {
+    const updatedList = list.map((item) =>
+      item.id === id ? { ...item, todolist: newText } : item
+    );
     setList(updatedList);
-    setEditId(null);
+    setEditingId(null);
+    setEditInput('');
+  };
+
+  // create a stop editing function
+  const editStop = () => {
+    setEditingId(null);
+    setEditInput("");
   };
 
   const deleteTodo = (id: number) => {
@@ -91,11 +97,12 @@ const ToDoList = () => {
               <ul>
                 {list.map((item) => (
                   <li key={item.id}>
-                    {editId === item.id ? (
+                    {editingId === item.id ? (
                       <input
                         type="text"
-                        value={item.todolist}
-                        onChange={(e) => editToDoList(item.id!, e.target.value)}
+                        value={editInput}
+                        onChange={(e) => setEditInput(e.target.value)}
+                        onBlur={() => editToDoList(item.id!, editInput)}
                       />
                     ) : (
                       <>
@@ -107,12 +114,15 @@ const ToDoList = () => {
                         <span style={{ textDecoration: item.isCompleted ? 'line-through' : 'none' }}>
                           {item.todolist}
                         </span>
+                        <button onClick={() => {
+                          setEditingId(item.id);
+                          setEditInput(item.todolist);
+                        }}>
+                          Edit
+                        </button>
+                        <button onClick={() => deleteTodo(item.id!)}>X</button>
                       </>
                     )}
-                    <button onClick={() => editToDoList(item.id!, item.todolist)}>
-                      Edit
-                    </button>
-                    <button onClick={() => deleteTodo(item.id!)}>X</button>
                   </li>
                 ))}
               </ul>
@@ -124,4 +134,4 @@ const ToDoList = () => {
   );
 };
 
-export default ToDoList; 
+export default ToDoList;
