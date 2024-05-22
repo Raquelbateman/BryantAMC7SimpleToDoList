@@ -18,20 +18,18 @@ body {
 }
 
 .myContainer {
+  display: flex;
+  flex-direction: column;
   position: absolute;
   top: 30%;
   left: 50%;
   transform: translate(-50%, -30%);
 }
 
-/* .addButton:hover {
-  opacity: 80%;
-  cursor: pointer;
-} */
 
 .meetingTitle {
   font-size: 29px;
-  margin-bottom: 300px;
+  margin-bottom: 200px;
   transform: translate(-2%, 45px);
   font-family: "Shadows Into Light", cursive;
 }
@@ -40,12 +38,20 @@ body {
   width:150px;
   height: 25px;
   border-radius:5px;
+  margin-bottom:-80%;
 
 }
 
 .addButton{
   background-color: #40B010;
+  color:blanchedalmond;
   height:24px;
   border-radius:5px;
   margin-left: 13px;
+}
+
+.addButton:hover {
+  background-color: #007500;
+  color:blanchedalmond;
+  cursor: pointer;
 }
