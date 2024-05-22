@@ -30,7 +30,7 @@ body {
 .meetingTitle {
   font-size: 29px;
   margin-bottom: 200px;
-  transform: translate(-2%, 45px);
+  transform: translate(-3%, 33px);
   font-family: "Shadows Into Light", cursive;
 }
 
@@ -38,7 +38,7 @@ body {
   width:150px;
   height: 25px;
   border-radius:5px;
-  margin-bottom:-80%;
+  margin-bottom:-90%;
 
 }
 
@@ -53,5 +53,13 @@ body {
 .addButton:hover {
   background-color: #007500;
   color:blanchedalmond;
+  cursor: pointer;
+}
+
+
+ul{
+  margin-top: 5%;
+  list-style: none;
+  padding-left: 1%;
   cursor: pointer;
 }

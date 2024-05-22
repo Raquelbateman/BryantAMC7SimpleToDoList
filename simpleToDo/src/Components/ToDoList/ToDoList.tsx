@@ -3,6 +3,7 @@ import { useState } from "react";
 interface ToDoList {
   id: number | null;
   todolist: string;
+  isCompleted: boolean; 
 }
 
 const ToDoList = () => {
@@ -11,6 +12,8 @@ const ToDoList = () => {
 
   //useState to help track our list
   const [list, setList] = useState<ToDoList[]>([]);
+
+  //useState to update our list
   const [editId, setEditId] = useState<number | null>(null);
 
   //create a function to help us add to our todo list
@@ -20,12 +23,14 @@ const ToDoList = () => {
       // Generate a random id for the new todo item
       id: Math.random(),
       // Set the todolist property to the newItem passed as an argument
-      todolist: newItem
+      todolist: newItem,
+      // Set isCompleted to false for new items
+      isCompleted: false
     };
-  
+
     // Create a new array by spreading the existing list and adding the newTodo item
     setList([...list, newTodo]);
-  
+
     // Clear the input field by setting the input state to an empty string
     setInput("");
   };
@@ -53,8 +58,15 @@ const ToDoList = () => {
         return false;
       }
     });
-  
+
     // Update the list state with the new list
+    setList(updatedList);
+  };
+
+  const toggleComplete = (id: number) => {
+    const updatedList = list.map((item) =>
+      item.id === id ? { ...item, isCompleted: !item.isCompleted } : item
+    );
     setList(updatedList);
   };
 
@@ -86,7 +98,16 @@ const ToDoList = () => {
                         onChange={(e) => editToDoList(item.id!, e.target.value)}
                       />
                     ) : (
-                      item.todolist
+                      <>
+                        <input
+                          type="checkbox"
+                          checked={item.isCompleted}
+                          onChange={() => toggleComplete(item.id!)}
+                        />
+                        <span style={{ textDecoration: item.isCompleted ? 'line-through' : 'none' }}>
+                          {item.todolist}
+                        </span>
+                      </>
                     )}
                     <button onClick={() => editToDoList(item.id!, item.todolist)}>
                       Edit
@@ -103,4 +124,4 @@ const ToDoList = () => {
   );
 };
 
-export default ToDoList;
+export default ToDoList; 
