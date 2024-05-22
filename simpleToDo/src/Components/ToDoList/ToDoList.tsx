@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styles from "./ToDoList.module.css"
 import { LiaTrashSolid } from "react-icons/lia";
+import { MdOutlineModeEdit } from "react-icons/md";
 
 interface ToDoList {
   id: number | null;
@@ -128,11 +129,14 @@ const ToDoList = () => {
               setEditInput(item.todolist);
             }}
           >
-            Edit
+            <MdOutlineModeEdit />
           </button>
 
           {/* delete button*/}
-          <button onClick={() => deleteTodo(item.id!)}></button>
+          <button onClick={() => deleteTodo(item.id!)}>
+
+          <LiaTrashSolid />
+          </button>
         </>
       )}
     </li>
