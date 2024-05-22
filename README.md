@@ -16,9 +16,9 @@ Completing an item on the list (crossing out)
 Delete an item
 Edit an item
 <br><br>
-<b>GitHub:</b>https://github.com/Raquelbateman/BryantAMC7SimpleToDoList<br>
-<b>Bugs That Were Dealt With</b>
-1. The edit button drove me insane. I could not get it to work for the life of me. I didnt realize I had to add a useState for both editing and inputing the tasks at hand.
+<b>GitHub:</b>https://github.com/Raquelbateman/BryantAMC7SimpleToDoList<br><br>
+<b>Bugs That Were Dealt With:</b>
+1. The edit button drove me insane. I could not get it to work for the life of me. I didnt realize I had to add a useState for both editing and inputing the tasks at hand but after i did that it was sorta a "duh" moment and i was able to continue with my code.
 2. I could not get the dot away from my list item. It took me longer than it should have only to realize that I needed to style my "ul" in the css file. Once I did that, the dot went away.
 
 Peer Reviewed by:  <br>
